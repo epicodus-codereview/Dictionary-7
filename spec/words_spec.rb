@@ -2,6 +2,9 @@ require ('rspec')
 require ('words')
 
 describe(Words) do
+  before() do
+  Words.clear
+end
 
   describe("#word") do
     it("lets you make a new word") do

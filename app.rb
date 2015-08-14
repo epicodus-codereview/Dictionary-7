@@ -18,16 +18,19 @@ post('/new_word') do
   erb(:index)
 end
 
-post('/add_definition/:id') do
-  @word = Words.find(params.fetch('id'))
-  @definitions = @word.definitions()
+get('/definition/:id') do
+  @words = Words.find(params.fetch('id'))
   @definitions = Definitions.all()
+  erb(:definition)
+  end
+
+post('/new_definition') do
   definition = params.fetch('definition')
-  new_definition = Definitions.new(:definition =>definition)
+  id = params.fetch('id')
+  new_definition = Definitions.new(:definition=>definition)
   new_definition.save()
-  @word.add_definition(new_definition)
+  @words = Words.find(id)
+  @words.add_definition(new_definition)
   @definitions = Definitions.all()
-  erb(:add_definitions)
-
-
+  erb(:definition)
 end
