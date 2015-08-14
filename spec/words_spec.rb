@@ -31,4 +31,12 @@ describe('.clear') do
   end
 end
 
+describe('#id') do
+  it('returns the id of a word') do
+    new_word = Words.new({:word=> "Frowzy", :definition =>" scruffy and neglected in appearance"})
+    new_word.save()
+    expect(new_word.id()).to(eq("Frowzy"))
+  end
+end
+
 end
