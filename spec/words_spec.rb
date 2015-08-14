@@ -57,9 +57,6 @@ end
       new_definition.save()
       new_word.add_definition(new_definition)
       expect(new_word.definitions()).to(eq([new_definition]))
-
     end
-
   end
-
 end

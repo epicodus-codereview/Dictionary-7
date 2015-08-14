@@ -2,7 +2,7 @@ require('rspec')
 require('definitions')
 
 describe(Definitions) do
-  
+
 
   describe('#definition') do
     it('returns a definition') do
@@ -29,6 +29,14 @@ describe('.clear') do
   it('clears the definitions array') do
     Definitions.clear()
     expect(Definitions.all()).to(eq([]))
+  end
+end
+
+describe('#id') do
+  it('returns the id of a definition') do
+    new_definition = Definitions.new(:definition=> "scruffy and neglected in appearance")
+    new_definition.save()
+    expect(new_definition.id()).to(eq("scruffy and neglected in appearance"))
   end
 end
 

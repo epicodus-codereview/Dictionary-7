@@ -20,17 +20,17 @@ end
 
 get('/definition/:id') do
   @words = Words.find(params.fetch('id'))
-  @definitions = Definitions.all()
+  @definitions = @words.definitions()
   erb(:definition)
   end
 
 post('/new_definition') do
   definition = params.fetch('definition')
-  id = params.fetch('id')
-  new_definition = Definitions.new(:definition=>definition)
+  new_definition = Definitions.new(:definition =>definition)
   new_definition.save()
+  id = params.fetch('id')
   @words = Words.find(id)
   @words.add_definition(new_definition)
   @definitions = Definitions.all()
-  erb(:definition)
+  redirect("/definition/#{id}")
 end

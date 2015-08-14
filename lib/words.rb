@@ -31,13 +31,12 @@ class Words
   end
 
   define_singleton_method(:find) do |identification|
-  found_word = nil
-  @@all.each() do |word|
-    if word.id().eql?(identification)
-      found_word = word
+    found_word = nil
+    @@all.each() do |word|
+      if word.id().eql?(identification)
+        found_word = word
+      end
     end
+    found_word
   end
-  found_word
-end
-
 end
