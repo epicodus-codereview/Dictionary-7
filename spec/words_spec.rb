@@ -24,4 +24,11 @@ describe('#save') do
   end
 end
 
+describe('.clear') do
+  it('clears the words array') do
+    Words.clear()
+    expect(Words.all()).to(eq([]))
+  end
+end
+
 end
