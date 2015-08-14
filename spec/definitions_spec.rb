@@ -10,4 +10,10 @@ describe(Definitions) do
     end
   end
 
+  describe('.all') do
+    it('returns an empty array for definitions') do
+      expect(Definitions.all()).to(eq([]))
+    end
+  end
+
 end
