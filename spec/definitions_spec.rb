@@ -16,4 +16,12 @@ describe(Definitions) do
     end
   end
 
+  describe('#save') do
+  it('saves a definition into the definitions array') do
+    new_definition = Definitions.new(:definition=>"scruffy and neglected in appearance")
+    new_definition.save()
+    expect(Definitions.all()).to(eq([new_definition]))
+  end
+end
+
 end
