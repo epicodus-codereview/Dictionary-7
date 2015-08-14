@@ -24,4 +24,11 @@ describe(Definitions) do
   end
 end
 
+describe('.clear') do
+  it('clears the definitions array') do
+    Definitions.clear()
+    expect(Definitions.all()).to(eq([]))
+  end
+end
+
 end
