@@ -39,4 +39,13 @@ describe('#id') do
   end
 end
 
+describe('#definitions') do
+  it('creates an empty array for definitions') do
+    new_word = Words.new({:word=> "Frowzy", :definition =>" scruffy and neglected in appearance"})
+    expect(new_word.definitions()).to(eq([]))
+
+  end
+
+end
+
 end
