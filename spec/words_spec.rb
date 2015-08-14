@@ -16,4 +16,12 @@ describe(Words) do
   end
 end
 
+describe('#save') do
+  it('saves words into words array') do
+    new_word = Words.new({:word=> "Frowzy", :definition =>" scruffy and neglected in appearance"})
+    new_word.save()
+    expect(Words.all()).to(eq([new_word]))
+  end
+end
+
 end
