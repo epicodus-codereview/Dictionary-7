@@ -2,6 +2,7 @@ require('rspec')
 require('definitions')
 
 describe(Definitions) do
+  
 
   describe('#definition') do
     it('returns a definition') do
