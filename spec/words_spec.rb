@@ -3,8 +3,8 @@ require ('words')
 
 describe(Words) do
   before() do
-  Words.clear
-end
+    Words.clear
+  end
 
   describe("#word") do
     it("lets you make a new word") do
@@ -14,10 +14,10 @@ end
   end
 
   describe('.all') do
-  it('creates empty array to store words') do
-    expect(Words.all()).to(eq([]))
+    it('creates empty array to store words') do
+      expect(Words.all()).to(eq([]))
+    end
   end
-end
 
   describe('#save') do
     it('saves words into words array') do

@@ -21,7 +21,7 @@ class Definitions
   end
 
   define_method(:id) do
-  @id
+    @id
   end
 
 end

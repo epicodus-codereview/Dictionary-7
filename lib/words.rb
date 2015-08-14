@@ -11,15 +11,15 @@ class Words
   end
 
   define_singleton_method(:all) do
-  @@all
+    @@all
   end
 
   define_method(:save) do
-  @@all.push(self)
+    @@all.push(self)
   end
 
   define_singleton_method(:clear) do
-   @@all = []
+    @@all = []
   end
 
   define_method(:definitions) do
@@ -34,7 +34,7 @@ class Words
     found_word = nil
     @@all.each() do |word|
       if word.id().eql?(identification)
-        found_word = word
+       found_word = word
       end
     end
     found_word

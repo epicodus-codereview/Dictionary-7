@@ -22,7 +22,7 @@ get('/definition/:id') do
   @words = Words.find(params.fetch('id'))
   @definitions = @words.definitions()
   erb(:definition)
-  end
+end
 
 post('/new_definition') do
   definition = params.fetch('definition')
