@@ -54,7 +54,7 @@ describe(Words) do
       new_word = Words.new(:word=> "Frowzy")
       new_word.save()
       new_definition = Definitions.new(:definition=> "scruffy and neglected in appearance")
-      new_definition.save()
+      # new_definition.save()
       new_word.add_definition(new_definition)
       expect(new_word.definitions()).to(eq([new_definition]))
     end

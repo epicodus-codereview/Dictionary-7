@@ -27,10 +27,12 @@ end
 post('/new_definition') do
   definition = params.fetch('definition')
   new_definition = Definitions.new(:definition =>definition)
-  new_definition.save()
+  # new_definition.save() # removed because unneeded for this exercise
   id = params.fetch('id')
-  @words = Words.find(id)
-  @words.add_definition(new_definition)
-  @definitions = Definitions.all()
+  @word = Words.find(id) # use singular @word to be clear that this represents 1 word object
+  @word.add_definition(new_definition)
+  # @definitions = Definitions.all() # not used (you only need definitions for a specific word, not ALL definitions)
   redirect("/definition/#{id}")
 end
+
+# try to follow convention by using /words/:id rather than /definition/:id for 
